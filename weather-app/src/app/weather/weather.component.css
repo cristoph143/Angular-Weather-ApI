@@ -34,9 +34,9 @@ img {
     border-radius: 0 6px 6px 0;
 }
 
-.card__image-container {
+/* .card__image-container {
     margin: -2rem -2rem 1rem -2rem;
-}
+} */
 
 .card__line {
     opacity: 0;
