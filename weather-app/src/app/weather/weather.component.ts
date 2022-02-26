@@ -24,6 +24,7 @@ export class WeatherComponent implements OnInit {
     this.weatherSearchForm = this.formBuilder.group({
       location: [""]
     });
+    this.sendToAPIXU({ location: "Cebu" });
   }
 
   sendToAPIXU(formValues: { location: string; }) {
@@ -36,6 +37,6 @@ export class WeatherComponent implements OnInit {
       (err: any) => console.error(err),
       () => console.log("done")
     );
-    console.log(this.weatherData + " weather data" + formValues.location);
+    console.log(this.weatherData.country + " weather data" + formValues.location);
   }
 }
