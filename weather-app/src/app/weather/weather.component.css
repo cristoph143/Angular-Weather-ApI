@@ -37,6 +37,14 @@ img {
 /* .card__image-container {
     margin: -2rem -2rem 1rem -2rem;
 } */
+.image{
+    width: 20%;
+    height: 20%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-left: 30px;
+}
 
 .card__line {
     opacity: 0;

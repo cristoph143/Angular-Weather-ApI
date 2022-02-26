@@ -17,7 +17,9 @@
     </div>
     <div class="card right">
         <h3 class="text-center my-4">Weather Details:</h3>
-        <img src="{{this.weatherData?.current.weather_icons}}" alt="weather icon" class="w-icon">
+        <div class="image">
+            <img src="{{this.weatherData?.current.weather_icons}}" alt="weather icon" class="w-icon">
+        </div>
         <p class="text-center">Current weather conditions: <span
                 class="font-weight-bold">{{this.weatherData?.current.weather_descriptions}}</span></p>
         <p class="text-center">Temperature in Degrees Celsius: <span
@@ -34,4 +36,6 @@
                 class="font-weight-bold">{{this.weatherData?.location.name}}</span></p>
     </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
