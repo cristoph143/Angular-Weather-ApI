@@ -24,18 +24,20 @@ export class WeatherComponent implements OnInit {
     this.weatherSearchForm = this.formBuilder.group({
       location: [""]
     });
+    this.sendToAPIXU({ location: "Cebu" });
   }
 
   sendToAPIXU(formValues: { location: string; }) {
     this.apixuService
-    .getWeather(formValues.location)
-    .subscribe(
-      (data: any) => {
-        this.weatherData = data;
-      },
-      (err: any) => console.error(err),
-      () => console.log("done")
-    );
-    console.log(this.weatherData + " weather data" + formValues.location);
+      .getWeather(formValues.location)
+      .subscribe(
+        (data: any) => {
+          this.weatherData = data;
+        },
+        (err: any) => console.error(err),
+        () => console.log("done")
+      );
+
+    console.log(this.weatherData.country + " weather data" + formValues.location);
   }
 }

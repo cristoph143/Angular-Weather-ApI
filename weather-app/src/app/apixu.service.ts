@@ -7,10 +7,12 @@ import { HttpClient } from '@angular/common/http';
 export class ApixuService {
 
   constructor(private http: HttpClient) { }
-  getWeather(location: string){
-    console.log(location)
+  getWeather(location: string) {
+    const api_key = "1d096d0e3a10d49b2763b4ae2d0b0a3f";
+    console.log(location + 'hh')
+    const url = 'http://api.weatherstack.com/current?access_key='+api_key+'&query=';
     return this.http.get(
-      'http://api.weatherstack.com/current?access_key=6d0e1a108ad59d4c564722373844cf20&query=' + location
+      url + location
     );
-}
+  }
 }
