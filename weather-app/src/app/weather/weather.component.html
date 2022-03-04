@@ -4,16 +4,15 @@
             <div class="temp">
                 {{this.weatherData?.current.temperature}}
                 <div *ngIf="this.weatherData?.current.temperature < 20;">
-                    <img src="https://scontent.fceb2-1.fna.fbcdn.net/v/t1.15752-9/260988326_1019933695249236_2912354592476118316_n.png?_nc_cat=108&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeEiwsJrmIY4Az3PQifKcQyfql8sY1_ltzaqXyxjX-W3NgUDaeamV0rWpvdNlUtaO1MenjQY3042UzzMNqXDUitF&_nc_ohc=QY2nRIbNkvkAX9Xavy_&_nc_ht=scontent.fceb2-1.fna&oh=03_AVJjWiAwuiV5ej94P3AH7J-xSer66NRGYzBQPgKOxuXVJA&oe=624351F7" alt="weather icon" class="w-icon images">
+                    <img src="https://scontent.fceb2-1.fna.fbcdn.net/v/t1.15752-9/260988326_1019933695249236_2912354592476118316_n.png?_nc_cat=108&ccb=1-5&_nc_sid=ae9488&_nc_eui2=AeEiwsJrmIY4Az3PQifKcQyfql8sY1_ltzaqXyxjX-W3NgUDaeamV0rWpvdNlUtaO1MenjQY3042UzzMNqXDUitF&_nc_ohc=QY2nRIbNkvkAX9Xavy_&_nc_ht=scontent.fceb2-1.fna&oh=03_AVJjWiAwuiV5ej94P3AH7J-xSer66NRGYzBQPgKOxuXVJA&oe=624351F7"
+                        alt="weather icon" class="w-icon images">
                 </div>
 
             </div>
             <div class="country">
                 {{this.weatherData?.location.region}}<br>{{this.weatherData?.location.country}}
-                <br>
-                {{this.weatherData?.location.localtime.split(" ")[1]}}
-                <br>
-                {{this.weatherData?.location.localtime.split(" ")[0]}}
+                <br> {{this.weatherData?.location.localtime.split(" ")[1]}}
+                <br> {{this.weatherData?.location.localtime.split(" ")[0]}}
             </div>
             <div class="imags">
                 <img src="{{this.weatherData?.current.weather_icons}}" alt="weather icon" class="w-icon image">
@@ -23,26 +22,31 @@
             <div class="search">
                 <form [formGroup]="weatherSearchForm" (ngSubmit)="sendToAPIXU(weatherSearchForm.value)">
                     <div class="form-group">
-                        <input class="form-control search-input" type="text" id="weatherLocation"
-                            aria-describedby="weatherLocation" placeholder="Please input a Location"
-                            formControlName="location" />
+                        <input class="form-control search-input" type="text" id="weatherLocation" aria-describedby="weatherLocation" placeholder="Please input a Location" formControlName="location" />
                         <button type="submit" class="btn btn-danger search-button"> Search</button>
                     </div>
                 </form>
             </div>
-            <p class="text-center">Current weather conditions: <span
-                    class="font-weight-bold">{{this.weatherData?.current.weather_descriptions}}</span></p>
-            <p class="text-center">Pressure in hPa: <span
-                    class="font-weight-bold">{{this.weatherData?.current.pressure}}</span>
-            </p>
-            <p class="text-center">Feels like in Degrees Celsius: <span
-                    class="font-weight-bold">{{this.weatherData?.current.feelslike}}</span></p>
-            <p class="text-center">Humidity: <span
-                    class="font-weight-bold">{{this.weatherData?.current.humidity}}</span>
-            </p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Current weather conditions</th>
+                        <th scope="col">Pressure in hPa</th>
+                        <th scope="col">Feels like in Degrees Celsius</th>
+                        <th scope="col">Humidity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{this.weatherData?.current.weather_descriptions}}</td>
+                        <td>{{this.weatherData?.current.pressure}}</td>
+                        <td>{{this.weatherData?.current.feelslike}}</td>
+                        <td>{{this.weatherData?.current.humidity}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
         </div>
     </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
-    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
